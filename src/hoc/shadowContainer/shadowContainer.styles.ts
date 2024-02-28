@@ -12,10 +12,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
     overflow: 'hidden',
-    backgroundColor: 'transparent',
-    borderColor: 'white',
-    borderWidth: 15,
-    shadowColor: '#b2b6bf',
+    shadowColor: Colors.Shadow,
     shadowRadius: 12,
     shadowOffset: {
       width: 0,

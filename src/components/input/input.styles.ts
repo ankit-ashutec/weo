@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     fontSize: FontSize.H6,
     height: 40,
+    flex: 1,
     paddingHorizontal: 10,
     fontWeight: '500',
   },

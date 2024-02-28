@@ -21,7 +21,9 @@ const Login: React.FC = () => {
             name="phoneNumber"
             containerStyle={styles.input}
             placeholder="Phone Number"
-            leftComponent={<Text style={styles.countryCodeText}>+91</Text>}
+            leftComponent={() => (
+              <Text style={styles.countryCodeText}>+91</Text>
+            )}
             keyboardType="phone-pad"
             maxLength={10}
             {...getErrorProps(errors.phoneNumber)}

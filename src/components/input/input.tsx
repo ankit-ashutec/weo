@@ -13,6 +13,7 @@ const Input = forwardRef<TextInput, InputProps>(
       helperText,
       placeholder,
       leftComponent,
+      rightComponent,
       ...restProps
     }: InputProps,
     ref?: React.Ref<TextInput>,
@@ -20,7 +21,7 @@ const Input = forwardRef<TextInput, InputProps>(
     return (
       <>
         <View style={[styles.container, containerStyle]}>
-          {leftComponent && leftComponent}
+          {leftComponent && leftComponent()}
           <TextInput
             ref={ref}
             spellCheck
@@ -30,6 +31,7 @@ const Input = forwardRef<TextInput, InputProps>(
             placeholder={placeholder}
             style={[styles.textInput, inputStyle]}
           />
+          {rightComponent && rightComponent()}
         </View>
         {error && <Text style={styles.error}>{helperText}</Text>}
       </>

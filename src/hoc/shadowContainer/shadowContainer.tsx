@@ -1,7 +1,8 @@
 import React, {memo} from 'react';
 import {styles} from './shadowContainer.styles';
 import {ShadowContainerProps} from './shadowContainer.types';
-import {View} from 'react-native';
+import {ImageBackground} from 'react-native';
+import {Round} from '@assets/images';
 
 const ShadowContainer: FCC<ShadowContainerProps> = ({
   children,
@@ -9,9 +10,12 @@ const ShadowContainer: FCC<ShadowContainerProps> = ({
   ...restProps
 }) => {
   return (
-    <View style={[styles.container, style]} {...restProps}>
+    <ImageBackground
+      style={[styles.container, style]}
+      source={Round}
+      {...restProps}>
       {children}
-    </View>
+    </ImageBackground>
   );
 };
 

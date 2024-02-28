@@ -1,11 +1,11 @@
 import React from 'react';
-import {Routes} from './src/setup/routes/index';
+import {Providers} from './src/setup/providers/index';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
 const App: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Routes />
+      <Providers />
     </SafeAreaView>
   );
 };

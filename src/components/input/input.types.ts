@@ -7,7 +7,8 @@ export interface InputProps extends TextInputProps {
   helperText?: string | undefined;
   borderColor?: string;
   isLoading?: boolean;
-  leftComponent?: React.ReactNode;
+  leftComponent?: () => React.JSX.Element | null;
+  rightComponent?: () => React.JSX.Element | null;
 }
 
 export interface InputWithControlProps<T extends FieldValues>

@@ -5,7 +5,10 @@ export enum Colors {
   Black100 = '#323642',
   Border = '#E9E9E9',
   Gray = '#CED2D9',
+  Gray900 = '#C5C6CF',
   Red = 'red',
+  Shadow = '#b2b6bf',
+  Background = '#F0F0F5',
 }
 
 export enum FontSize {
