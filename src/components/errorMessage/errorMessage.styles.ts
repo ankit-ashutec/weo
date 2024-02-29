@@ -5,6 +5,5 @@ export const styles = StyleSheet.create({
   errorMessage: {
     fontSize: FontSize.Body,
     color: Colors.Red,
-    marginTop: 10,
   },
 });

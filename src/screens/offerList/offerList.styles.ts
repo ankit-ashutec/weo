@@ -1,4 +1,4 @@
-import {Colors} from '@utils';
+import {Colors, FontSize} from '@utils';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
   flatlist: {
     gap: 15,
     padding: 15,
+    paddingTop: 10,
   },
   searchInput: {
     margin: 15,
@@ -36,5 +37,11 @@ export const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
     justifyContent: 'center',
+  },
+  resultText: {
+    fontSize: FontSize.BodyBig,
+    color: Colors.Black100,
+    paddingHorizontal: 20,
+    marginTop: 10,
   },
 });

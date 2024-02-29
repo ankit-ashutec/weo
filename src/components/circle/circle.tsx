@@ -1,14 +1,10 @@
 import {Pizza} from '@assets/images';
 import React from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
-import Svg, {
-  Text,
-  Image,
-  Path,
-  Circle as SVGCircle,
-  Defs,
-} from 'react-native-svg';
+import {View, Dimensions, Image} from 'react-native';
+import Svg, {Text, Path, Circle as SVGCircle} from 'react-native-svg';
 import {CircleProps} from './circle.types';
+import {Colors} from '@utils';
+import {styles} from './circle.styles';
 
 const {width} = Dimensions.get('window');
 const Circle: React.FC<CircleProps> = ({days, degree, miles, price}) => {
@@ -16,8 +12,7 @@ const Circle: React.FC<CircleProps> = ({days, degree, miles, price}) => {
   const strokeWidth = 10;
   const centerX = radius + strokeWidth / 2;
   const centerY = radius + strokeWidth / 2;
-  const imageWidth = 150;
-  const imageHeight = 150;
+  const imageSize = width / 3;
 
   const getX = (angle: number) =>
     centerX + radius * Math.cos((angle * Math.PI) / 180);
@@ -34,14 +29,14 @@ const Circle: React.FC<CircleProps> = ({days, degree, miles, price}) => {
           textAnchor="middle"
           fontSize={20}
           fontWeight="bold"
-          fill="green">
+          fill={Colors.Green}>
           {`$${price}`}
         </Text>
         <Text
           x={centerX}
-          y={centerY - centerY / 2}
+          y={centerY - centerY / 1.85}
           textAnchor="middle"
-          fontSize={16}
+          fontSize={14}
           fill="black">
           {`$${(Number(price) / 12).toFixed(2)}/month`}
         </Text>
@@ -68,41 +63,62 @@ const Circle: React.FC<CircleProps> = ({days, degree, miles, price}) => {
           textAnchor="middle"
           fontSize={20}
           fontWeight="bold"
-          fill="red">
+          fill={Colors.RedPink}>
           {miles}
         </Text>
+        <View
+          style={{
+            width: 30,
+            height: 2,
+            left: centerX - centerX / 1.25,
+            top: centerY - 5,
+            backgroundColor: Colors.RedPink,
+          }}
+        />
         <Text
           x={centerX - centerX / 1.4}
-          y={centerY + 10}
+          y={centerY + 13}
           textAnchor="middle"
-          fontSize={16}
+          fontSize={14}
           fill="black">
           Miles
         </Text>
         <Text
           x={centerX + centerX / 1.4}
-          y={centerY - 10}
+          y={centerY - 8}
           textAnchor="middle"
           fontSize={20}
           fontWeight="bold"
-          fill="blue">
+          fill={Colors.Blue}>
           {days}
         </Text>
+        <View
+          style={{
+            width: 30,
+            height: 2,
+            left: centerX + centerX / 1.6,
+            top: centerY - 5,
+            backgroundColor: Colors.Blue,
+          }}
+        />
         <Text
           x={centerX + centerX / 1.4}
-          y={centerY + 10}
+          y={centerY + 13}
           textAnchor="middle"
-          fontSize={16}
+          fontSize={14}
           fill="black">
           Days
         </Text>
 
         <Image
-          href={Pizza}
-          x={centerX - imageWidth / 2}
-          y={centerY - imageHeight / 2}
-          width={imageWidth}
-          height={imageHeight}
+          source={Pizza}
+          style={{
+            width: imageSize,
+            height: imageSize,
+            left: centerX - imageSize / 2,
+            top: centerY - imageSize / 2,
+            borderRadius: imageSize,
+          }}
         />
 
         {/* Custom Arcs */}
@@ -112,7 +128,7 @@ const Circle: React.FC<CircleProps> = ({days, degree, miles, price}) => {
             M ${getX(91)} ${getY(91)}
             A ${radius} ${radius} 0 0 1 ${getX(215)} ${getY(215)}
           `}
-          stroke="red"
+          stroke={Colors.RedPink}
           strokeWidth={strokeWidth}
           fill="transparent"
         />
@@ -130,7 +146,7 @@ const Circle: React.FC<CircleProps> = ({days, degree, miles, price}) => {
             M ${getX(218)} ${getY(218)}
             A ${radius} ${radius} 0 0 1 ${getX(327)} ${getY(327)}
           `}
-          stroke="blue"
+          stroke={Colors.Green}
           strokeWidth={strokeWidth}
           fill="transparent"
         />
@@ -148,7 +164,7 @@ const Circle: React.FC<CircleProps> = ({days, degree, miles, price}) => {
             M ${getX(330)} ${getY(330)}
             A ${radius} ${radius} 0 0 1 ${getX(88)} ${getY(88)}
           `}
-          stroke="green"
+          stroke={Colors.Blue}
           strokeWidth={strokeWidth}
           fill="transparent"
         />
@@ -165,14 +181,5 @@ const Circle: React.FC<CircleProps> = ({days, degree, miles, price}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-});
 
 export default Circle;

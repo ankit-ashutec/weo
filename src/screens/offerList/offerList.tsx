@@ -1,9 +1,9 @@
-import {View, FlatList, TouchableOpacity} from 'react-native';
+import {View, FlatList, TouchableOpacity, Text} from 'react-native';
 import React, {useCallback} from 'react';
 import {styles} from './offerList.styles';
 import {Offer} from '@components/offerTile/offerTile.types';
-import {InputWithControl, OfferTile} from '@components';
-import {BackArrow, Close, SearchIcon} from '@assets/svg';
+import {FloatingButton, InputWithControl, OfferTile} from '@components';
+import {BackArrow, Close, Menu, SearchIcon} from '@assets/svg';
 import {useOfferListController} from './offerList.controller';
 import {Colors} from '@utils';
 
@@ -53,11 +53,15 @@ const OfferList: React.FC = () => {
         rightComponent={renderSearchRightIcon}
         placeholder="Search"
       />
+      <Text style={styles.resultText}>Results: {fields.offerList?.length}</Text>
       <FlatList
         data={fields.offerList}
         renderItem={renderItem}
         contentContainerStyle={styles.flatlist}
       />
+      <FloatingButton>
+        <Menu />
+      </FloatingButton>
     </View>
   );
 };

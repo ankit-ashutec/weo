@@ -19,8 +19,9 @@ const Container: React.FC<ContainerProps> = ({
           style={[{flex: 1}, keyboardAvoidingViewProps?.style]}>
           <ScrollView
             bounces={false}
+            showsVerticalScrollIndicator={false}
             {...ScrollViewProps}
-            keyboardShouldPersistTaps="always"
+            keyboardShouldPersistTaps="never"
             contentContainerStyle={[
               {flexGrow: 1},
               ScrollViewProps?.contentContainerStyle,

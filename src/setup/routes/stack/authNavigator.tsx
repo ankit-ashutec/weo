@@ -17,10 +17,6 @@ const AuthNavigator: React.FC = () => {
       <Stack.Screen
         name={NavigationNames.CollectOffer}
         component={CollectOffer}
-        options={{
-          headerShown: true,
-          headerTitleStyle: {textAlign: 'center'},
-        }}
       />
     </Stack.Navigator>
   );

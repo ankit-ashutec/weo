@@ -13,7 +13,7 @@ export const useLoginController = (): LoginController => {
     control,
     formState: {errors, isValid},
   } = useForm<LoginFormFields>({
-    mode: 'onChange',
+    mode: 'onBlur',
     resolver: yupResolver(loginSchema),
   });
 

@@ -18,7 +18,9 @@ const Button: React.FC<ButtonProps> = ({
       activeOpacity={0.8}
       disabled={disabled || isLoading}
       style={[styles.container, {opacity: disabled ? 0.3 : 1}, buttonStyle]}>
-      <Text style={[styles.name, textStyle]}>{name}</Text>
+      <Text style={[styles.name, textStyle]} numberOfLines={1}>
+        {name}
+      </Text>
       {isLoading && (
         <ActivityIndicator
           style={styles.activityIndicator}

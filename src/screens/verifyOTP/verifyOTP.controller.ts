@@ -20,7 +20,7 @@ export const useVerifyOTPController = (): VerifyOTPController => {
     getValues,
     handleSubmit,
   } = useForm<VerifyOTPFormFields>({
-    mode: 'onChange',
+    mode: 'onBlur',
     defaultValues: {
       resendTimer: 30,
     },
