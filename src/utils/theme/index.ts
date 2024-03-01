@@ -13,6 +13,7 @@ export enum Colors {
   Blue = '#5560FA',
   Green = '#7DBE37',
   RedPink = '#E11F5F',
+  LightGrayishBlue = '#D1D1DD',
 }
 
 export enum FontSize {

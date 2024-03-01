@@ -1,14 +1,9 @@
-import {
-  View,
-  Text,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {OfferTileProps} from './offerTile.types';
 import {styles} from './offerTile.styles';
-import {Pizza, Round} from '@assets/images';
+import {Pizza} from '@assets/images';
+import {ShadowContainer} from '@hoc';
 
 const OfferTile: React.FC<OfferTileProps> = ({item, onPress}) => {
   return (
@@ -18,9 +13,9 @@ const OfferTile: React.FC<OfferTileProps> = ({item, onPress}) => {
       onPress={onPress}
       activeOpacity={0.5}>
       <View style={styles.imageView}>
-        <ImageBackground style={styles.imageShadowView} source={Round}>
+        <ShadowContainer distance={7} style={styles.shadowContainer}>
           <Image style={styles.image} source={Pizza} />
-        </ImageBackground>
+        </ShadowContainer>
       </View>
       <View style={styles.contentView}>
         <View style={{flex: 1, gap: 5}}>

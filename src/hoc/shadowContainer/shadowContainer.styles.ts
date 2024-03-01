@@ -5,20 +5,12 @@ const {width} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
-    width: width - width / 9,
-    height: width - width / 9,
-    borderRadius: width,
+    width: width / 1.4,
+    height: width / 1.4,
+    borderRadius: width / 2,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
     overflow: 'hidden',
-    shadowColor: Colors.Shadow,
-    shadowRadius: 12,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    elevation: 8,
+    backgroundColor: Colors.White,
   },
 });

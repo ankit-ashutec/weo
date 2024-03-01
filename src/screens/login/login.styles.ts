@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     top: '20%',
   },
   input: {
-    marginHorizontal: '12%',
+    marginHorizontal: '5%',
     alignSelf: 'center',
   },
   countryCodeText: {

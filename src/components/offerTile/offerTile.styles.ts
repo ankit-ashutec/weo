@@ -23,8 +23,9 @@ export const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     backgroundColor: Colors.Background,
-    padding: 12,
+    padding: 15,
   },
+  shadowContainer: {width: 90, height: 90, borderRadius: 50},
   imageShadowView: {
     width: 100,
     height: 100,
